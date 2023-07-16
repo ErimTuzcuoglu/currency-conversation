@@ -1,0 +1,27 @@
+export enum EnvironmentVariables {
+  /* #region COMMON */
+  APP_PORT = 'APP_PORT',
+  CRYPT_PASS = 'CRYPT_PASS',
+  /* #endregion */
+  /* #region JWT */
+  JWT_EXPIRATION_TIME = 'JWT_EXPIRATION_TIME',
+  JWT_SECRET_KEY = 'JWT_SECRET_KEY',
+  JWT_REFRESH_SECRET_KEY = 'JWT_REFRESH_SECRET_KEY',
+  /* #endregion */
+  /* #region DATABASE */
+  DB_HOST = 'DB_HOST',
+  DB_PORT = 'DB_PORT',
+  DB_USERNAME = 'DB_USERNAME',
+  DB_PASSWORD = 'DB_PASSWORD',
+  DB_NAME = 'DB_NAME',
+  NODE_ENV = 'NODE_ENV',
+  SEED_USER_MAIL = 'SEED_USER_MAIL',
+  SEED_USER_PASSWORD = 'SEED_USER_PASSWORD',
+  SEED_USER_NAME = 'SEED_USER_NAME',
+  /* #endregion */
+  /* #region SWAGGER */
+  SW_TITLE = 'SW_TITLE',
+  SW_DESCRIPTION = 'SW_DESCRIPTION',
+  SW_VERSION = 'SW_VERSION',
+  /* #endregion */
+}

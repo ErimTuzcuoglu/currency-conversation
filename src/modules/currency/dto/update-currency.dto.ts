@@ -1,4 +1,8 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { CreateCurrencyDto } from './create-currency.dto';
+import { ApiProperty } from '@nestjs/swagger';
+import { CreateCurrencyDto } from '@modules/currency/dto/create-currency.dto';
 
-export class UpdateCurrencyDto extends PartialType(CreateCurrencyDto) {}
+export class UpdateCurrencyDto extends PartialType(CreateCurrencyDto) {
+  @ApiProperty()
+  id: string;
+}
