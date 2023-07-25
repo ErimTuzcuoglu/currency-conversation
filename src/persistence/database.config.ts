@@ -1,12 +1,5 @@
 import { DataSourceOptions } from 'typeorm';
 import { EnvironmentVariables } from '@config/environment/EnvironmentVariables';
-/* #region Entites */
-import { Currency } from '@modules/currency/entities/currency.entity';
-import { Rate } from '@modules/currency/entities/rate.entity';
-import { Offer } from '@modules/offer/entities/offer.entity';
-import { User } from '@modules/user/entities/user.entity';
-import { Wallet } from '@modules/user/entities/wallet.entity';
-/* #endregion */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
@@ -20,6 +13,7 @@ export default () => {
     [EnvironmentVariables.DB_NAME]: DB_NAME,
   } = process.env;
   const migrationsDir = path.join(__dirname, 'migrations');
+  const entitiesDir = path.join(`${__dirname}/../modules/**/*.entity{.ts,.js}`);
 
   return {
     type: 'postgres',
@@ -27,7 +21,7 @@ export default () => {
     port: parseInt(DB_PORT) || 5432,
     username: DB_USERNAME,
     password: DB_PASSWORD,
-    entities: [User, Currency, Rate, Wallet, Offer],
+    entities: [entitiesDir],
     // logging: 'all',
     synchronize: false,
     migrationsRun: false,
